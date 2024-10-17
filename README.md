@@ -1,4 +1,4 @@
-# Ethical Hacking Labs
+# Hacking Labs
 
 ### Part 1: Setting Up the Docker Containers
 
