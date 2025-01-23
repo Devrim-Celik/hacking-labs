@@ -1,0 +1,52 @@
+services:
+  attacker_system:
+    image: dc3lik/attacker_system:latest
+    container_name: attacker_system
+    hostname: attacker_system
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    networks:
+      - external
+    ports:
+      - "127.0.0.1:10022:22"
+      
+  jumphost1:
+    image: dc3lik/jumphost:latest
+    container_name: jumphost1
+    hostname: jumphost1
+    networks:
+      - external
+      - dmz
+
+  jumphost2:
+    image: dc3lik/jumphost:latest
+    container_name: jumphost2
+    hostname: jumphost2
+    networks:
+      - dmz
+      - internal
+
+  target_pivot1:
+    image: dc3lik/target_pivot:latest
+    container_name: target_pivot1
+    hostname: target_pivot1
+    networks:
+      - dmz
+
+  target_pivot2:
+    image: dc3lik/target_pivot:latest
+    container_name: target_pivot2
+    hostname: target_pivot2
+    networks:
+      - internal
+
+networks:
+  external:
+    driver: bridge
+  dmz:
+    driver: bridge
+  internal:
+    driver: bridge
+
