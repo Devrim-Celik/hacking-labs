@@ -1,0 +1,18 @@
+services:
+  bash-trainer:
+    image: dc3lik/bash-trainer:latest
+    container_name: bash-trainer
+    hostname: bash-trainer
+    restart: unless-stopped
+    ports:
+      - "10122:22"
+  web-server:
+    image: dc3lik/web-server:latest
+    container_name: web-server
+    hostname: web-server
+    restart: unless-stopped
+  nc-server:
+    image: dc3lik/nc-server:latest
+    container_name: nc-server
+    hostname: nc-server
+    restart: unless-stopped

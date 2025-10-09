@@ -1,4 +1,4 @@
-# Hacking Labs
+# Ethical Hacking - Lab Setup Instructions
 
 Welcome to the lab setup instructions for the lecture **Ethical Hacking**. In this guide you will learn how to configure and access the Docker-based lab environment we’ll be using throughout the course. Follow these steps carefully to ensure proper functionality.
 
@@ -11,7 +11,7 @@ Welcome to the lab setup instructions for the lecture **Ethical Hacking**. In th
 **Docker image**: a read-only template used to create containers. Images are stored on registries (like Docker Hub) and pulled to your machine when you start containers.
 
 **docker-compose file** (`.yml`): a YAML file that defines one or more services (containers), networks, volumes and how they connect. `docker-compose` reads these files and creates the whole multi-container application (networks + volumes + containers) with a single command. 
-All docker-compose files will be provided on the following [Github repository](https://github.com/Devrim-Celik/hacking-labs).****
+All docker-compose files will be provided on the following [Github repository](https://github.com/Devrim-Celik/hacking-labs).
 
 Why we use them in this course:
 - Each lab is modeled as a set of containers (target machines + helper machines). Using `docker-compose` makes it easy to bring the entire lab up and down consistently.
@@ -93,8 +93,8 @@ Can be started using:
     ```bash
     docker-compose -f base.yml up -d
     ```
-`base.yml` contains two persistent machines used in nearly every session:
 
+`base.yml` contains two persistent machines used in every session:
 1. **lab-assistant**
     - Purpose: menu-driven helper that contains exercise descriptions, objectives and navigation to all labs and their exercises. Use this container to read what you should do next for a lab.
     - SSH port on host: **10022**
@@ -135,15 +135,13 @@ This command merges the two files so that the persistent services in `base.yml` 
 - **When a target is a web server that maps ports to the host**, you can access it directly from your host machine via `http://localhost:<mapped-port>`.
 
 **Stop / tear down when finished**
-
 When you finished the lab and want to clean up everything the combined compose created:
 ```bash
-docker-compose -f base.yml -f ethical-hacking_lab0X.yml down
+docker-compose -f ethical-hacking_lab0X.yml down
 ```
-This removes containers and networks created by the `up` command. If you want to also remove associated volumes, add `-v`.
+This removes containers and networks created by the `up` command.
 
 ---
-
 ## One-line Cheat-sheet
 Start lab: `docker-compose -f base.yml -f ethical-hacking_lab0X.yml up -d`
 SSH lab-assistant: `ssh student@localhost -p 10022`

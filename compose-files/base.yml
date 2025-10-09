@@ -1,0 +1,30 @@
+services:
+  lab-assistant:
+    image: dc3lik/lab-assistant:latest
+    container_name: lab-assistant
+    hostname: lab-assistant
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10022:22"
+
+  attacker-system:
+    image: dc3lik/attacker-system:latest
+    container_name: attacker-system
+    hostname: attacker-system
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    networks:
+      - default
+      - external
+    ports:
+      - "127.0.0.1:10023:22"
+
+networks:
+  external:
+    driver: bridge
+  dmz:
+    driver: bridge
+  internal:
+    driver: bridge
