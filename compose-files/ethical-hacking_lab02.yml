@@ -1,7 +1,6 @@
 services:
   target-recon:
     image: dc3lik/target-recon:latest
-    image: target-recon:latest
     container_name: target-recon
     hostname: target-recon
     restart: unless-stopped
