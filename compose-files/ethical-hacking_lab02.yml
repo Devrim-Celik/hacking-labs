@@ -4,3 +4,7 @@ services:
     container_name: target-recon
     hostname: target-recon
     restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: "65536"
+        hard: "65536"
