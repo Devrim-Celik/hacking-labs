@@ -1,0 +1,22 @@
+services:
+  target-file-inclusion:
+    image: dc3lik/target-file-inclusion:latest
+    container_name: target-file-inclusion
+    hostname: target-file-inclusion
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10381:80"
+  target-file-upload:
+    image: dc3lik/target-file-upload:latest
+    container_name: target-file-upload
+    hostname: target-file-upload
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10382:80"
+  target-cmd-injection:
+    image: dc3lik/target-cmd-injection:latest
+    container_name: target-cmd-injection
+    hostname: target-cmd-injection
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10383:80"
