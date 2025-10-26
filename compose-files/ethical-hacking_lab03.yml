@@ -20,7 +20,7 @@ services:
     restart: unless-stopped
     ports:
       - "127.0.0.1:10383:80"
- target-sql-injection:
+  target-sql-injection:
     image: dc3lik/target-sql-injection:latest
     container_name: target-sql-injection
     hostname: target-sql-injection
