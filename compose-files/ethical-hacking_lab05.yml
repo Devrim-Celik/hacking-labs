@@ -1,0 +1,43 @@
+services:
+  target-lpe01:
+    image: dc3lik/target-lpe01:latest
+    container_name: target-lpe01
+    hostname: target-lpe01
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10523:22"
+  target-lpe02:
+    image: dc3lik/target-lpe02:latest
+    container_name: target-lpe02
+    hostname: target-lpe02
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10524:22"
+  target-lpe03:
+    image: dc3lik/target-lpe03:latest
+    container_name: target-lpe03
+    hostname: target-lpe03
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10525:22"
+  target-lpe04:
+    image: dc3lik/target-lpe04:latest
+    container_name: target-lpe04
+    hostname: target-lpe04
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10526:22"
+  target-lpe05:
+    image: dc3lik/target-lpe05:latest
+    container_name: target-lpe08
+    hostname: target-lpe08
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10527:22"
+  target-lpe06:
+    image: dc3lik/target-lpe06:latest
+    container_name: target-lpe06
+    hostname: target-lpe06
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:10528:22"
