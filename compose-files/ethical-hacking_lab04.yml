@@ -1,6 +1,6 @@
 services:
   target_public01:
-    image: dc3lik/target_public01:latest
-    container_name: target_public01
-    hostname: target_public01
+    image: dc3lik/target-public01:latest
+    container_name: target-public01
+    hostname: target-public01
     restart: unless-stopped
