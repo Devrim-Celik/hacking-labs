@@ -1,0 +1,6 @@
+services:
+  target-pass-atks:
+    image: dc3lik/target-pass-atks:latest
+    container_name: target-pass-atks
+    hostname: target-pass-atks
+    restart: unless-stopped
