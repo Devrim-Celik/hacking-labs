@@ -29,8 +29,8 @@ services:
       - "127.0.0.1:10526:22"
   target-lpe05:
     image: dc3lik/target-lpe05:latest
-    container_name: target-lpe08
-    hostname: target-lpe08
+    container_name: target-lpe05
+    hostname: target-lpe05
     restart: unless-stopped
     ports:
       - "127.0.0.1:10527:22"
