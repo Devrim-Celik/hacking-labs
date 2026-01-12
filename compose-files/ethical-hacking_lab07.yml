@@ -1,0 +1,31 @@
+services:
+  jumphost01:
+    image: dc3lik/jumphost:latest
+    container_name: jumphost01
+    hostname: jumphost01
+    restart: unless-stopped
+    networks:
+      - external
+      - dmz
+  jumphost02:
+    image: dc3lik/jumphost:latest
+    container_name: jumphost02
+    hostname: jumphost02
+    restart: unless-stopped
+    networks:
+      - dmz
+      - internal
+  target_pivot01:
+    image: dc3lik/target-pivot:latest
+    container_name: target-pivot01
+    hostname: target-pivot01
+    restart: unless-stopped
+    networks:
+      - dmz
+  target_pivot02:
+    image: dc3lik/target-pivot:latest
+    container_name: target-pivot02
+    hostname: target-pivot02
+    restart: unless-stopped
+    networks:
+      - internal
